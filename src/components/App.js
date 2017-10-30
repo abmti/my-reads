@@ -20,6 +20,7 @@ class BooksApp extends React.Component {
     }
 
     componentDidMount() {
+        console.debug("INIT")
         BooksAPI.getAll().then((books) => {
             this.setState({ books })
         })
@@ -36,7 +37,7 @@ class BooksApp extends React.Component {
 
     searchBooks = (query) => {
         this.setState(state => ({
-            searchBooks: { ...state.searchBooks, searching: false }
+            searchBooks: { ...state.searchBooks, searching: true }
         }))
         BooksAPI.search(query, 20).then((books) => {
             var serchedsBooks = []

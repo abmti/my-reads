@@ -18,7 +18,6 @@ class DetailBook extends Component {
         BooksAPI.get(this.props.match.params.id)
             .then(
                 book => {
-                    console.debug(book)
                     this.setState({book, loaded: true})
                 });
     }
@@ -28,7 +27,11 @@ class DetailBook extends Component {
     }
 
     goBack = () => {
-        this.props.history.goBack()
+        if(this.props.history.length > 1) {
+            this.props.history.goBack()
+        } else {
+            this.props.history.push('/')
+        }
     }
 
 
