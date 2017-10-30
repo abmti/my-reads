@@ -75,11 +75,11 @@ class BooksApp extends React.Component {
                     <ListBooks books={this.state.books}
                                onClickBtnAdd={() => {
                                    this.clearSearchBooks()
-                                   history.push('/create')
+                                   history.push('/search')
                                }}
                                onUpdateBook={this.updateBook} />
                 )}/>
-                <Route path='/create' render={() => (
+                <Route path='/search' render={() => (
                     <SearchBooks data={this.state.searchBooks}
                                  onUpdateQuerySearchBooks={this.updateQuerySearchBooks}
                                  onUpdateBook={this.updateBook} />
