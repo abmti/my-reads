@@ -34,7 +34,6 @@ class DetailBook extends Component {
         }
     }
 
-
     render() {
         const { book } = this.state
         const { title, authors = [], shelf = 'none', description, language = '', publisher = ''} = book
@@ -76,7 +75,6 @@ class DetailBook extends Component {
             )
         )
     }
-
 
 }
 
